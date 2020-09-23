@@ -15,7 +15,7 @@ function App() {
 
   const themeHook = useState("light");
   const [theme, setTheme] = useContext(ThemeContext);
-  const currentTheme = AppTheme[theme];
+  const currentTheme = AppTheme[themeHook[0]];
 
   return (
     <ThemeContext.Provider value={themeHook}>
@@ -31,7 +31,7 @@ function App() {
         <Router>
           <Navbar />
           <Route exact path="/" component={Home} />
-          <Footer></Footer>
+          <Footer />
         </Router>
       </div>
     </ThemeContext.Provider>

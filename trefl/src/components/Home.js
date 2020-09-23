@@ -25,10 +25,10 @@ const Home = (props) => {
 
   return (
     <div
-    // style={{
-    //   backgroundColor: `${currentTheme.backgroundColor}`,
-    //   color: `${currentTheme.textColor}`,
-    // }}
+      style={{
+        backgroundColor: `${currentTheme.backgroundColor}`,
+        color: `${currentTheme.textColor}`,
+      }}
     >
       <h1
         style={{
