@@ -21,9 +21,11 @@ const Home = (props) => {
   return (
     <div>
       <h1 style={{ textAlign: "center" }}>Home</h1>
-      {divisions.map((division) => (
-        <li key={division.id}>{division.name}</li>
-      ))}
+      <ul>
+        {divisions.map((division) => (
+          <li key={division.id}>{division.name}</li>
+        ))}
+      </ul>
     </div>
   );
 };

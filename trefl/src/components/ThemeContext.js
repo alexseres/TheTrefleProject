@@ -3,9 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 import { backgroundColor, textColor } from "../theme";
 
 const ThemeToggleContext = createContext({
-  toggle: () => {
-    console.log("toggle coming next");
-  },
+  toggle: () => {},
 });
 
 export const useTheme = () => useContext(ThemeToggleContext);

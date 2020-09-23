@@ -34,14 +34,9 @@ const Navbar = (props) => {
 const Header = styled.header`
   border: 1px solid #000;
   background-image: url(${img});
-  /* background-color: #66ff99; */
+  color: white;
   text-align: center;
   padding: 15px;
-  /* font-family: ${(props) =>
-    props.theme.fontFamily};
-  &:hover {
-    background-color: #eee6ff;
-  } */
   font-family: "Comic Sans MS";
   img {
     max-width: 100%;
