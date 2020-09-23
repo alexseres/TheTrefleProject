@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./components/layout/Footer"
 import Navbar from "./components/layout/Navbar";
 import Home from "./components/Home";
+import PlantDetails from "./components/PlantDetails";
 
 function App() {
   const accessToken = "8RYlIatUUjxLOhPVAz22a6pVEYhePGXdjwiwToaJKDI";
@@ -16,6 +17,9 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
         </Switch>
+        <switch>
+          <Route exact path="/plant-details" component={PlantDetails} />
+        </switch>
         <Footer></Footer>
       </Router>
     </div>
