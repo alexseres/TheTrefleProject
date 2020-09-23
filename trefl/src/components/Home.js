@@ -1,7 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 
+import ThemeContext from "./context/ThemeContext";
+import AppTheme from "./Colors";
+
 const Home = (props) => {
+  const [theme, setTheme] = useContext(ThemeContext);
+  const currentTheme = AppTheme[theme];
   const [divisions, setDivisions] = useState([]);
 
   const divisionUrl =
@@ -19,8 +24,19 @@ const Home = (props) => {
   }, []);
 
   return (
-    <div>
-      <h1 style={{ textAlign: "center" }}>Home</h1>
+    <div
+    // style={{
+    //   backgroundColor: `${currentTheme.backgroundColor}`,
+    //   color: `${currentTheme.textColor}`,
+    // }}
+    >
+      <h1
+        style={{
+          textAlign: "center",
+        }}
+      >
+        Home
+      </h1>
       {divisions.map((division) => (
         <li key={division.id}>{division.name}</li>
       ))}
