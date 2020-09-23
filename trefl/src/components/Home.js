@@ -6,7 +6,7 @@ const Home = (props) => {
 
   const divisionUrl =
     "https://trefle.io//api/v1/divisions?token=8RYlIatUUjxLOhPVAz22a6pVEYhePGXdjwiwToaJKDI";
-
+ 
   useEffect(() => {
     axios.get(divisionUrl).then((res) => {
       setDivisions((prevDivisions) => [
