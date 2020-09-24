@@ -1,4 +1,5 @@
 import React,{useEffect,useState} from 'react';
+import {Link} from 'react-router-dom'
 import search from './searchUtils';
 import styled from 'styled-components';
 
@@ -51,7 +52,9 @@ export default function Search() {
             {results.map((result) => (
             <div key={result.id}>
                 <Image src={result.image_url}></Image>
-                 {result.common_name}</div>))}    
+                <Link to={{pathname:`/species-detail/${result.id}`, state:{id:result.id}}}> {result.common_name}</Link>
+                 </div>
+                 ))}    
             </div>
         )
     }

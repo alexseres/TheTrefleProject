@@ -27,7 +27,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/search" component={Search} />
-            <Route exact path="/plant-details" component={PlantDetails} />
+            <Route exact path="/species-detail/:id" component={PlantDetails} />
           </Switch>
           <Footer />
         </Router>
@@ -35,5 +35,4 @@ function App() {
     </ThemeContext.Provider>
   );
 }
-
 export default App;

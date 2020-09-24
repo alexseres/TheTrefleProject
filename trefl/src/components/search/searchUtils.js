@@ -12,7 +12,6 @@ const search = () => {
             //Cancel the previos request before making a new request
             cancel.cancel();
         }
-
         //create new cancel token
         cancel = axios.CancelToken.source();
         try{
@@ -21,10 +20,8 @@ const search = () => {
                 return resources[query];
             }
             const res = await axios (query,{cancelToken: cancel.token});
-
             const result = res.data.data;
             resources[query] = result;
-
             return result;
         }catch(error){
             if (axios.isCancel(error)) {
@@ -34,7 +31,6 @@ const search = () => {
                 // Handle usual errors
                 console.log('Something went wrong: ', error.message);
               }
-
         }
     };
 };

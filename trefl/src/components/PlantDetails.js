@@ -1,11 +1,16 @@
 ﻿import React, { useState, useEffect } from "react";
+import axios from 'axios'
 
-const PlantDetails = () => {
+const PlantDetails = (props) => {
   const [plantData, setPlantData] = useState([]);
+  const [idx, setIdx] = useState(props.location.state.id);
+  
+  console.log(props.location.state.id);
 
   useEffect(() => {
+
     fetch(
-      "https://trefle.io/api/v1/plants/183086?token=RHxIcD6YqLzQoeCHuyF3ur8AFaEiGwknPb34ufApQNM"
+      `https://trefle.io/api/v1/species/${idx}?token=RHxIcD6YqLzQoeCHuyF3ur8AFaEiGwknPb34ufApQNM`
     )
       .then((response) => {
         if (!response.ok) {
