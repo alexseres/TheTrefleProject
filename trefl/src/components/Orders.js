@@ -69,4 +69,4 @@ const Orders = (props) => {
   );
 };
 
-export default React.memo(Orders);
+export default Orders;

@@ -69,4 +69,4 @@ const Families = (props) => {
   );
 };
 
-export default React.memo(Families);
+export default Families;

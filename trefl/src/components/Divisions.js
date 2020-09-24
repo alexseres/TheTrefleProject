@@ -56,4 +56,4 @@ const Divisions = () => {
   );
 };
 
-export default React.memo(Divisions);
+export default Divisions;

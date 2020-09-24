@@ -68,4 +68,4 @@ const Classes = (props) => {
   );
 };
 
-export default React.memo(Classes);
+export default Classes;

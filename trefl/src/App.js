@@ -12,6 +12,8 @@ import Classes from "./components/Classes";
 import Divisions from "./components/Divisions";
 import Orders from "./components/Orders";
 import Families from "./components/Families";
+import Genuses from "./components/Genuses";
+import Species from "./components/Species";
 
 function App() {
   const themeHook = useState("light");
@@ -36,6 +38,8 @@ function App() {
             <Route path="/classes" component={Classes} />
             <Route path="/orders" component={Orders} />
             <Route path="/families" component={Families} />
+            <Route path="/genuses" component={Genuses} />
+            <Route path="/species" component={Species} />
           </Switch>
           {/* <Footer /> */}
         </Router>
