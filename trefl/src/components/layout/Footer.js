@@ -15,6 +15,6 @@ const StyledFooter = styled.footer`
   bottom: 0;
   width: 100%;
   background-color: #006600;
-  color: #dcdcdc;
+  color: white;
   text-align: center;
 `;
