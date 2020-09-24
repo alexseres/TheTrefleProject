@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import ThemeContext from "./components/context/ThemeContext";
 import { AppTheme } from "./components/Colors";
 import "./App.css";
+import PlantDetails from "./components/PlantDetails";
 
 function App() {
   const themeHook = useState("light");
@@ -24,6 +25,7 @@ function App() {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/plant-details" component={PlantDetails} />
           </Switch>
           <Footer />
         </Router>
