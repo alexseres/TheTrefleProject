@@ -1,35 +1,26 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
-
-import ThemeContext from "./context/ThemeContext";
-import { AppTheme } from "./Colors";
 
 const Home = () => {
   const [divisions, setDivisions] = useState([]);
-  const theme = useContext(ThemeContext)[0];
-  const currentTheme = AppTheme[theme];
 
   const divisionUrl =
     "https://trefle.io//api/v1/divisions?token=8RYlIatUUjxLOhPVAz22a6pVEYhePGXdjwiwToaJKDI";
- 
+
   useEffect(() => {
     axios.get(divisionUrl).then((res) => {
       setDivisions((prevDivisions) => [
         ...prevDivisions,
         ...res.data.data.map((division) => {
-          return { id: division.id, name: division.name };
+          return { id: division.id, name: division.name, slug: division.slug };
         }),
       ]);
     });
   }, []);
 
   return (
-    <div
-      style={{
-        backgroundColor: `${currentTheme.backgroundColor}`,
-        color: `${currentTheme.textColor}`,
-      }}
-    >
+    <div>
       <h1
         style={{
           textAlign: "center",
@@ -37,9 +28,20 @@ const Home = () => {
       >
         Home
       </h1>
-      {divisions.map((division) => (
-        <li key={division.id}>{division.name}</li>
-      ))}
+      <h2 style={{ textAlign: "center" }}>Divisions</h2>
+      <div
+        style={{
+          textAlign: "left",
+          margin: "15px",
+          display: "block",
+        }}
+      >
+        {divisions.map((division) => (
+          <p key={division.id}>
+            <Link to={`/divisions?name=${division.slug}`}>{division.name}</Link>
+          </p>
+        ))}
+      </div>
     </div>
   );
 };

@@ -8,6 +8,7 @@ import { AppTheme } from "./components/Colors";
 import "./App.css";
 import PlantDetails from "./components/PlantDetails";
 import Search from "./components/search/Search";
+import Classes from "./components/Classes";
 
 function App() {
   const themeHook = useState("light");
@@ -28,8 +29,9 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/search" component={Search} />
             <Route exact path="/plant-details" component={PlantDetails} />
+            <Route path="/divisions" component={Classes} />
           </Switch>
-          <Footer />
+          {/* <Footer /> */}
         </Router>
       </div>
     </ThemeContext.Provider>
