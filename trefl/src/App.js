@@ -8,13 +8,16 @@ import { AppTheme } from "./components/Colors";
 import "./App.css";
 import PlantDetails from "./components/PlantDetails";
 import Search from "./components/search/Search";
+import FavoritePlants from "./components/favorit/FavoritePlants";
+import FavoriteListContext from "./components/favorit/FavoritListContext";
 
 function App() {
   const themeHook = useState("light");
   const currentTheme = AppTheme[themeHook[0]];
-
+  const favoritePlants = useState([])
   return (
     <ThemeContext.Provider value={themeHook}>
+        <FavoriteListContext.Provider value={favoritePlants}>
       <div
         className="App"
         style={{
@@ -28,10 +31,12 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/search" component={Search} />
             <Route exact path="/species-detail/:id" component={PlantDetails} />
+            <Route exact path="/favorite-plants" component={FavoritePlants} />
           </Switch>
           <Footer />
         </Router>
       </div>
+        </FavoriteListContext.Provider>
     </ThemeContext.Provider>
   );
 }
