@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Classes = (props) => {
   const classesUrl =
@@ -58,11 +59,13 @@ const Classes = (props) => {
         }}
       >
         {classes.map((clazz) => (
-          <p key={clazz.id}>{clazz.name}</p>
+          <p key={clazz.id}>
+            <Link to={`/orders?class=${clazz.slug}`}>{clazz.name}</Link>
+          </p>
         ))}
       </div>
     </div>
   );
 };
 
-export default Classes;
+export default React.memo(Classes);

@@ -10,6 +10,8 @@ import PlantDetails from "./components/PlantDetails";
 import Search from "./components/search/Search";
 import Classes from "./components/Classes";
 import Divisions from "./components/Divisions";
+import Orders from "./components/Orders";
+import Families from "./components/Families";
 
 function App() {
   const themeHook = useState("light");
@@ -32,6 +34,8 @@ function App() {
             <Route exact path="/plant-details" component={PlantDetails} />
             <Route path="/divisions" component={Divisions} />
             <Route path="/classes" component={Classes} />
+            <Route path="/orders" component={Orders} />
+            <Route path="/families" component={Families} />
           </Switch>
           {/* <Footer /> */}
         </Router>

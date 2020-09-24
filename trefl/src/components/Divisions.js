@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -40,10 +40,10 @@ const Divisions = () => {
               <p key={division.id}>
                 <Link
                   to={`/classes?division=${division.slug}`}
-                  style={{
-                    color: `${AppTheme[theme[0]].linkColor}`,
-                    visited: `${AppTheme[theme[0]].linkVisitedColor}`,
-                  }}
+                  // style={{
+                  //   color: `${AppTheme[theme[0]].linkColor}`,
+                  //   visited: `${AppTheme[theme[0]].linkVisitedColor}`,
+                  // }}
                 >
                   {division.name}
                 </Link>
@@ -56,4 +56,4 @@ const Divisions = () => {
   );
 };
 
-export default Divisions;
+export default React.memo(Divisions);
