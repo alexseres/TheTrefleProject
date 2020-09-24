@@ -1,6 +1,5 @@
 import React from "react";
-
-import Divisions from "./Divisions";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -12,7 +11,9 @@ const Home = () => {
       >
         Home
       </h1>
-      <Divisions />
+      <h3 style={{ textAlign: "center" }}>
+        <Link to="/divisions">Vascular Plants</Link>
+      </h3>
     </div>
   );
 };

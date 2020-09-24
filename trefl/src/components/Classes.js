@@ -1,10 +1,12 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const Classes = (props) => {
   const classesUrl =
     "https://trefle.io//api/v1/division_classes?token=8RYlIatUUjxLOhPVAz22a6pVEYhePGXdjwiwToaJKDI";
-  const divisionSlug = props.location.search.match(/=(.*)$/)[1];
+  const searchParams = props.location.search;
+  const divisionSlug =
+    searchParams === "" ? null : props.location.search.match(/=(.*)$/)[1];
 
   const [classes, setClasses] = useState([]);
   const [nextPage, setNextPage] = useState(classesUrl);
@@ -12,19 +14,28 @@ const Classes = (props) => {
   useEffect(() => {
     if (nextPage != null) {
       axios.get(nextPage).then((res) => {
-        setClasses((prevClasses) => [
-          ...prevClasses,
-          ...res.data.data
-            .filter((clazz) => clazz.division !== null)
-            .filter(
-              (clazz) =>
-                clazz.division.slug !== null && clazz.division.slug !== ""
-            )
-            .filter((clazz) => clazz.division.slug === divisionSlug)
-            .map((clazz) => {
+        if (divisionSlug != null) {
+          setClasses((prevClasses) => [
+            ...prevClasses,
+            ...res.data.data
+              .filter((clazz) => clazz.division !== null)
+              .filter(
+                (clazz) =>
+                  clazz.division.slug !== null && clazz.division.slug !== ""
+              )
+              .filter((clazz) => clazz.division.slug === divisionSlug)
+              .map((clazz) => {
+                return { id: clazz.id, name: clazz.name, slug: clazz.slug };
+              }),
+          ]);
+        } else {
+          setClasses((prevClasses) => [
+            ...prevClasses,
+            ...res.data.data.map((clazz) => {
               return { id: clazz.id, name: clazz.name, slug: clazz.slug };
             }),
-        ]);
+          ]);
+        }
         res.data.links.next == null
           ? setNextPage(null)
           : setNextPage(
