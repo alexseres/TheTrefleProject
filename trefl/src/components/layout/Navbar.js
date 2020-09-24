@@ -1,15 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import img from "./headerGreenPicture2.png";
-import ThemeContext from "../context/ThemeContext";
-import AppTheme from "../Colors";
 import ThemeToggler from "../ThemeToggler";
 
-const Navbar = (props) => {
-  const [theme, setTheme] = useContext(ThemeContext);
-  const currentTheme = AppTheme[theme];
-
+const Navbar = () => {
   return (
     <Header style={{ color: "white" }}>
       <Title primary>Green Power Rangers</Title>

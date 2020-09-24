@@ -1,6 +1,4 @@
-import React from "react";
-
-const AppTheme = {
+export const AppTheme = {
   light: {
     textColor: "#000",
     backgroundColor: "#fff",
@@ -10,5 +8,3 @@ const AppTheme = {
     backgroundColor: "#333",
   },
 };
-
-export default AppTheme;

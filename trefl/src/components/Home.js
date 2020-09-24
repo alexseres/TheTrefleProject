@@ -2,12 +2,12 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 
 import ThemeContext from "./context/ThemeContext";
-import AppTheme from "./Colors";
+import { AppTheme } from "./Colors";
 
-const Home = (props) => {
-  const [theme, setTheme] = useContext(ThemeContext);
-  const currentTheme = AppTheme[theme];
+const Home = () => {
   const [divisions, setDivisions] = useState([]);
+  const theme = useContext(ThemeContext)[0];
+  const currentTheme = AppTheme[theme];
 
   const divisionUrl =
     "https://trefle.io//api/v1/divisions?token=8RYlIatUUjxLOhPVAz22a6pVEYhePGXdjwiwToaJKDI";
