@@ -9,13 +9,11 @@ import "./App.css";
 import PlantDetails from "./components/PlantDetails";
 import Search from "./components/search/Search";
 
-
 function App() {
   const themeHook = useState("light");
   const currentTheme = AppTheme[themeHook[0]];
 
   return (
-
     <ThemeContext.Provider value={themeHook}>
       <div
         className="App"
@@ -28,15 +26,13 @@ function App() {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/search" component={Search}/>
+            <Route exact path="/search" component={Search} />
             <Route exact path="/plant-details" component={PlantDetails} />
-          
           </Switch>
           <Footer />
         </Router>
       </div>
     </ThemeContext.Provider>
-
   );
 }
 
