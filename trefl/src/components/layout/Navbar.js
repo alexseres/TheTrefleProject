@@ -17,9 +17,9 @@ const Navbar = () => {
         Search{" "}
       </Link>{" "}
       |
-      <Link style={linkStyle} to="/plant-details">
+      <Link style={linkStyle} to="/favorite-plants">
         {" "}
-        Plant Details{" "}
+        Favorite Plants{" "}
       </Link>{" "}
       |
       <ThemeToggler style={{ float: "right" }} />
